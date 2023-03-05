@@ -19,11 +19,9 @@ export default ({ nestIndex, control, register }) => {
                             style={{ marginRight: "25px" }}
                         />
 
-                        {/*<input*/}
-                        {/*    name={`test[${nestIndex}].nestedArray[${k}].field2`}*/}
-                        {/*    ref={register()}*/}
-                        {/*    defaultValue={item.field2}*/}
-                        {/*/>*/}
+                        <input
+                            {...register(`test.${nestIndex}.nestedArray.${k}.field2`, { required: true })}
+                        />
                         <button type="button" onClick={() => remove(k)}>
                             Delete Nested
                         </button>
@@ -36,7 +34,8 @@ export default ({ nestIndex, control, register }) => {
                 onClick={() =>
                     append({
                         field1: "field1",
-                        field2: "field2"
+                        field2: "field2",
+                        field3: "field3"
                     })
                 }
             >

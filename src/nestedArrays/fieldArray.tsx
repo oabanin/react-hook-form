@@ -38,10 +38,19 @@ export default function FieldArray({ control, register, setValue, getValues }) {
                 <button
                     type="button"
                     onClick={() => {
-                        append({ name: "append" });
+                        append({ name: "append" }, );
                     }}
                 >
                     append
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => {
+                        append({ name: "appendb2v2", nestedArray: [{ field1: "appendv2", field2: "appendv2" }] }, );
+                    }}
+                >
+                  append   v2 with nestsed
                 </button>
 
                 <button
@@ -62,7 +71,7 @@ export default function FieldArray({ control, register, setValue, getValues }) {
                 <button
                     type="button"
                     onClick={() => {
-                        prepend({ name: "append" });
+                        prepend({ name: "prepend" });
                     }}
                 >
                     prepend
@@ -73,7 +82,7 @@ export default function FieldArray({ control, register, setValue, getValues }) {
                     onClick={() => {
                         setValue("test", [
                             {
-                                name: "append",
+                                name: "prepend",
                                 nestedArray: [{ field1: "Prepend", field2: "Prepend" }]
                             },
                             ...getValues().test
