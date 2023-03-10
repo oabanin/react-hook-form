@@ -1,6 +1,9 @@
 import {useForm, FormProvider} from "react-hook-form";
-import Many from "./many/many";
+import Many from "./nestedArrays/many";
+import './App.css'
 
+
+import MUIForm from "./MUIControlled";
 export default function App() {
     //const methods = useForm();
 
@@ -10,7 +13,7 @@ export default function App() {
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
        // <FormProvider {...methods}>
-            <Many/>
+            <MUIForm/>
        // </FormProvider>
     );
 }
